@@ -1,0 +1,4 @@
+git chechout -b name
+git add .
+git commit -a
+git push origin branch_name
