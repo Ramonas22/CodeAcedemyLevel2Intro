@@ -1,4 +1,4 @@
-package intro;
+package intro.U2a;
 
 import java.util.Scanner;
 
