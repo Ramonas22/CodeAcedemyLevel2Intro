@@ -4,7 +4,6 @@ public class Dump {
 
     /*
     *
-    *
     * git status
     * git add .
     * git commit -a
