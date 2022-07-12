@@ -23,7 +23,7 @@ class AdvanceTasks {
     }
 
     static Integer findSmallestNumber(ArrayList<Integer> numbers) {
-        return Collections.max(numbers);
+        return Collections.min(numbers);
     }
 
     static double averageNumber(ArrayList<Integer> numbers) {
