@@ -1,0 +1,24 @@
+Link to Git repository of project
+https://github.com/Ramonas22/CodeAcedemyLevel2Intro/blob/master/src/ND2/U2/AdvanceTasksTest.java
+
+Useful link for Git commands when messed up
+https://ohshitgit.com/
+
+Git Commands:
+
+git checkout (branch name)
+
+git checkout -b (new branch name)
+
+git status (shows status)
+
+git add (filename or . for all)
+
+git commit (-m "Commit text" , -a will commit all and will open Notepad++ to commit)
+
+git push (empty will push to main)
+git push origin (branch name to push to branch)
+
+git pull origin master/main (will pull changes and update branch from main)
+
+more to be added...
