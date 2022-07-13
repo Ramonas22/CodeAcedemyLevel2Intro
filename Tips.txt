@@ -22,3 +22,21 @@ git push origin (branch name to push to branch)
 git pull origin master/main (will pull changes and update branch from main)
 
 more to be added...
+
+Exceptions
+Try{
+something that either trows and exception or trow it manually
+}catch(ExceptionName e){
+will enter if exception was thrown
+do something can access exception e
+}finally{
+will be executed no matter what
+}
+Example
+try{
+    thrown new Exception("Hello I am exception");
+}catch(Exception e){
+    e.getMessage();         //Will print Hello I am exception
+}finally{
+    System.out.println("This is the final step");   //Will print this is the final step
+}
