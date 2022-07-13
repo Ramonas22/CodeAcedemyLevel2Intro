@@ -21,6 +21,10 @@ git push origin (branch name to push to branch)
 
 git pull origin master/main (will pull changes and update branch from main)
 
+git merge (branch name) to merge branch with branch that current is checkout
+
+git branch -d (branch name) delete chosen branch
+
 more to be added...
 
 Exceptions
