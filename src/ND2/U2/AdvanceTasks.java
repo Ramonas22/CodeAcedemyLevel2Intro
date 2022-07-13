@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 class AdvanceTasks {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
+       /*
         Scanner scanner = new Scanner(System.in);
 
         ArrayList<Integer> integerArrayList = new ArrayList<>();
@@ -19,10 +20,13 @@ class AdvanceTasks {
         System.out.println(averageNumber(integerArrayList));
         System.out.println(middleCharacter("1234"));
         System.out.println(countVowels("LabAs"));
-
+*/
     }
 
-    static Integer findSmallestNumber(ArrayList<Integer> numbers) {
+    static Integer findSmallestNumber(ArrayList<Integer> numbers) throws Exception {
+        if(numbers.isEmpty()){
+            throw new Exception("Empty list");
+        }
         return Collections.min(numbers);
     }
 
