@@ -26,7 +26,42 @@ class Warmup {
         }
     }
 
-    Integer advancedCalculator(String equation){
-        return null;
+    Integer advancedCalculator(String equation) throws Exception {
+
+        //Incorrect since there is check for which singe goes first * / goes before + -, works only with one sign
+        Integer answer = 0, tempNum2 = null, singCounter = 0;
+        boolean flag = false;
+        char sign = ' ';
+        char[] array = equation.toCharArray();
+
+        for (int i = 0, temp = 0; i < array.length; i++) {
+            if (array[i] == '/' || array[i] == '*' || array[i] == '-' || array[i] == '+') {
+                if (sign != ' ' && tempNum2 != null) {
+                    answer = calculator(answer, sign, tempNum2);
+                } else {
+                    flag = true;
+                    sign = array[i];
+                    singCounter++;
+                    temp = 0;
+                }
+            } else {
+                if (!flag) {
+                    answer += Character.getNumericValue(array[i]) + answer * (temp * 10);
+                } else {
+                    if (tempNum2 == null) {
+                        tempNum2 = 0;
+                    }
+                    tempNum2 = Character.getNumericValue(array[i]) + tempNum2 * (temp * 10);
+                }
+                temp++;
+            }
+        }
+        if (singCounter == 1) {
+            return calculator(answer, sign, tempNum2);
+        } else {
+            return answer += calculator(answer, sign, tempNum2);
+        }
     }
+
+
 }
