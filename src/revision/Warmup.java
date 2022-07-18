@@ -1,8 +1,5 @@
 package revision;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 class Warmup {
 
     Integer calculator(Integer a, char sign, Integer b) throws Exception {
