@@ -1,5 +1,8 @@
 package revision;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 class Warmup {
 
     Integer calculator(Integer a, char sign, Integer b) throws Exception {
@@ -66,5 +69,18 @@ class Warmup {
         }
     }
 
+    Integer countWords(String text){
+        if(!text.isEmpty()){
+        int counter = 1;
+        char[] temp = text.trim().toCharArray();
+            for (char c : temp) {
+                if (c == ' ') {
+                    counter++;
+                }
+            }
+        return counter;
+        }
+        return null;
+    }
 
 }

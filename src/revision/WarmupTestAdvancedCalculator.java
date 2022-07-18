@@ -43,4 +43,13 @@ class WarmupTestAdvancedCalculator {
     void advancedCalculatorMultipleActions2() throws Exception {
         assertEquals(12, warmup.advancedCalculator("10/2+10-3"));
     }
+
+    @Test
+    void countingWords1(){
+        assertEquals(2,warmup.countWords("Labas Krabas "));
+    }
+    @Test
+    void countingWords2(){
+        assertEquals(6,warmup.countWords("  Labas vakaras Lietuva, deja siandien pirmadienis "));
+    }
 }
