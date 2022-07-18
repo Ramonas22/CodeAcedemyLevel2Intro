@@ -38,6 +38,9 @@ class Warmup {
             if (array[i] == '/' || array[i] == '*' || array[i] == '-' || array[i] == '+') {
                 if (sign != ' ' && tempNum2 != null) {
                     answer = calculator(answer, sign, tempNum2);
+                    sign = array[i];
+                    tempNum2 = null;
+                    temp = 0;
                 } else {
                     flag = true;
                     sign = array[i];
@@ -46,7 +49,7 @@ class Warmup {
                 }
             } else {
                 if (!flag) {
-                    answer += Character.getNumericValue(array[i]) + answer * (temp * 10);
+                    answer = Character.getNumericValue(array[i]) + answer * (temp * 10);
                 } else {
                     if (tempNum2 == null) {
                         tempNum2 = 0;

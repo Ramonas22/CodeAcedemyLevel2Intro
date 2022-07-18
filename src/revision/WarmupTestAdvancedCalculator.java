@@ -16,11 +16,11 @@ class WarmupTestAdvancedCalculator {
 
     @Test
     void advancedCalculatorAddition() throws Exception {
-        assertEquals(4, warmup.advancedCalculator("2+2"));
+        assertEquals(24, warmup.advancedCalculator("2+22"));
     }
     @Test
     void advancedCalculatorSubtraction() throws Exception {
-        assertEquals(0, warmup.advancedCalculator("2-2"));
+        assertEquals(10, warmup.advancedCalculator("12-2"));
     }
     @Test
     void advancedCalculatorMultiplication() throws Exception {
@@ -34,5 +34,13 @@ class WarmupTestAdvancedCalculator {
     void advancedCalculatorDivisionByZero() throws Exception {
         assertThrows(Exception.class,() ->
                 warmup.advancedCalculator("2/0"),"Division by zero is not allowed");
+    }
+    @Test
+    void advancedCalculatorMultipleActions1() throws Exception {
+        assertEquals(7, warmup.advancedCalculator("10/2+2"));
+    }
+    @Test
+    void advancedCalculatorMultipleActions2() throws Exception {
+        assertEquals(12, warmup.advancedCalculator("10/2+10-3"));
     }
 }
