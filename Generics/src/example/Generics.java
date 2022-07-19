@@ -1,3 +1,5 @@
+package example;
+
 import java.util.ArrayList;
 
 class Generics {

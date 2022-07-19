@@ -1,3 +1,4 @@
+package example;
 
 class GenericsTest<T, U> {
 
