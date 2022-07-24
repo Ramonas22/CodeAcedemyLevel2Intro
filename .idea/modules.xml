@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Generics/Generics.iml" filepath="$PROJECT_DIR$/Generics/Generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/Level2Intro.iml" filepath="$PROJECT_DIR$/Level2Intro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MoreExceptions/MoreExceptions.iml" filepath="$PROJECT_DIR$/MoreExceptions/MoreExceptions.iml" />
     </modules>
   </component>
 </project>

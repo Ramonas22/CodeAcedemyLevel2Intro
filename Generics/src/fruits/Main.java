@@ -14,9 +14,17 @@ class Main {
 
         Banana banana1 = new Banana("BANANANA");
         Banana banana2 = new Banana("Banananananananana");
+        Banana banana3 = new Banana("Bananana");
 
         minion.sellFruit(banana1);
         minion.sellFruit(banana2);
+        minion.sellFruit(banana3);
+
+        FruitSalesPerson<Banana> minion1 = new FruitSalesPerson<>("Tony");
+
+        minion1.sellFruit(banana1);
+        minion1.sellFruit(banana2);
+
 
         FruitSalesPerson<Orange> gankplank = new FruitSalesPerson<>("Trevor");
 
@@ -25,6 +33,8 @@ class Main {
 
         gankplank.sellFruit(orange1);
         gankplank.sellFruit(orange2);
+
+        minion.salesManBattle(minion1);
 
     }
 }

@@ -71,5 +71,26 @@ class Team<T extends Player> {
         return true;
     }
 
-
+    public void playMatch(Team<T> opponent, Integer ourScore, Integer opponentScore){
+        if(ourScore == opponentScore){
+            tied++;
+            opponent.tied++;
+        } else if (opponentScore > ourScore) {
+            loss++;
+            opponent.won++;
+        }else {
+            won++;
+            opponent.loss++;
+        }
+    }
+/*
+    public void whichTeamHasMorePlayers(Team<Player> team){
+        if (team.getMembers().size() < members.size()){
+            System.out.println("We have more players");
+        } else if (team.getMembers().size() == members.size()) {
+            System.out.println("Tie");
+        }else {
+            System.out.println("They have more players");
+        }
+    }*/
 }
