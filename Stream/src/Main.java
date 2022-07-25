@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class Main {
@@ -31,13 +28,16 @@ class Main {
                 .count();
         System.out.println(numberOfWordsThatStartWithW);
 
-        Optional<String> optionalString = words
+       // Optional<String> optionalString =
+                 words
                 .stream()
                 .filter(word -> word.toLowerCase().startsWith("w"))
+                .peek(word -> System.out.println(word))
                 .filter(word -> word.length() == 5)
-                .findFirst();
+                .collect(Collectors.toList());
 
-        System.out.println(optionalString);
+       // System.out.println(optionalString);
+
 
 
     }
