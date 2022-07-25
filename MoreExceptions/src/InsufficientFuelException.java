@@ -2,7 +2,7 @@ class InsufficientFuelException extends Exception{
     private Double fuelShortage;
 
     public InsufficientFuelException(double fuelShortage) {
-        super("Missing" + fuelShortage +" fuel");
+        super("Missing " + fuelShortage +" fuel");
         this.fuelShortage = fuelShortage;
 
     }

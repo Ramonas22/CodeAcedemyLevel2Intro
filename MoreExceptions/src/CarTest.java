@@ -17,9 +17,9 @@ class CarTest {
     }
     @Test
     void travelUnSuccessful() throws InsufficientFuelException {
-        assertEquals(null, car.driveTrip(200));
-       // assertThrows(InsufficientFuelException.class , () ->
-        //       car.driveTrip(200) , "Missing2.0 fuel");
+        //assertEquals(null, car.driveTrip(200));
+        assertThrows(InsufficientFuelException.class , () ->
+               car.driveTrip(200) , "Missing 2.0 fuel");
     }
 
 }

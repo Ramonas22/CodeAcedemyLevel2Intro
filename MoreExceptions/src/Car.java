@@ -12,21 +12,22 @@ class Car {
     }
 
 
-    public Double driveTrip(Integer distance) throws InsufficientFuelException{
+    public Double driveTrip(Integer distance) throws InsufficientFuelException {
         printCarInfo();
         System.out.printf("fuel before %.2f and distance to ride %d\t", getFuelLeft(), distance);
-        try {
-            if (fuelLeft < distance * averageConsumption / 100) {
-                throw new InsufficientFuelException(-(fuelLeft - (distance * averageConsumption / 100)));
-            } else {
-                fuelLeft -= distance  * averageConsumption/100;
-                System.out.printf("Fuel left after travel: %.2f\n", fuelLeft);
-                return getFuelLeft();
-            }
-        } catch (InsufficientFuelException e) {
-            System.out.printf("Distance cannot be reached since you are missing %.2f litres of fuel\n", e.getFuelShortage());
-            return null;
+        // try {
+        if (fuelLeft < distance * averageConsumption / 100) {
+            throw new InsufficientFuelException(-(fuelLeft - (distance * averageConsumption / 100)));
+        } else {
+            fuelLeft -= distance * averageConsumption / 100;
+            System.out.printf("Fuel left after travel: %.2f\n", fuelLeft);
+            return getFuelLeft();
         }
+        // } catch (InsufficientFuelException e) {
+        //    System.out.printf("Distance cannot be reached since you are missing %.2f litres of fuel\n", e.getFuelShortage());
+        //    return null;
+        //}
+
     }
 
     private void printCarInfo() {
