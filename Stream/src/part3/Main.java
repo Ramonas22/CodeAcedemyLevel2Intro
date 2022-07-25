@@ -69,9 +69,12 @@ class Main {
     }
 
     static List<Student> sortedListByNamesAscendingOrder(List<Student> students) {
+        /**
+         * Return sorted list of students by names in ascending order
+         */
         return students
                 .stream()
-                .sorted(Comparator.comparing(Student::getName))
+                .sorted(Comparator.comparing(Student::getName, Comparator.naturalOrder()))
                 .collect(Collectors.toList());
     }
 
