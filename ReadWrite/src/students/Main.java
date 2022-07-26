@@ -71,7 +71,6 @@ class Main {
         FileWriter fileWriter = new FileWriter(file, false);
         fileWriter.write(message+"\n");
         studentList
-                .stream()
                 .forEach(student -> {
                     try {
                          fileWriter.write(student.getName()+","+student.getID()+","+student.getCourse()+","+student.getPhoneNumber()+"\n");
