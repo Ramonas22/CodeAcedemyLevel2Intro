@@ -1,0 +1,1 @@
+Task 6 form new string from first 2 chars of Strings: 

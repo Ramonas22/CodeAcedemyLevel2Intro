@@ -1,0 +1,2 @@
+Task 1 collect strings that contains a or A: 
+a a a a a a a 

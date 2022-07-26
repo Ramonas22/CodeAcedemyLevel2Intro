@@ -1,0 +1,2 @@
+Task 2 count strings longer than 6: 
+0

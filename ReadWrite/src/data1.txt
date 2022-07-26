@@ -1,2 +1,2 @@
-Kas dingo pirmas
-a b c d e q
+This is an online generator which converts normal text
+letters into tiny letters which you can copy and paste into facebook, twitter.

@@ -1,0 +1,2 @@
+Task 5 collect strings that starts with letter s: 
+s s s s s s 

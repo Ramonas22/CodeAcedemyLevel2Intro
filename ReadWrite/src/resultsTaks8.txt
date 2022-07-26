@@ -1,0 +1,2 @@
+Task 8 does all string is at least 3 char length: 
+false
