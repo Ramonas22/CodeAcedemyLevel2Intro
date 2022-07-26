@@ -8,37 +8,53 @@ import java.util.stream.Collectors;
 class Main {
     public static void main(String[] args) throws IOException {
 
-        File file1 =
-                new File("C:\\Users\\sanom\\Desktop\\Coding Academy\\Level2\\Level2Intro\\ReadWrite\\src\\data1.txt");
-        file1.createNewFile();
+        String path = ("C:\\Users\\sanom\\Desktop\\Coding Academy\\Level2\\Level2Intro\\ReadWrite\\src\\data1.txt");
 
-        List<String> list = new ArrayList<>();
-
-        var wrapper = new Object(){List<String> list2 = new ArrayList<>();};
-        Files.lines(Paths.get("C:\\Users\\sanom\\Desktop\\Coding Academy\\Level2\\Level2Intro\\ReadWrite\\src\\data1.txt"))
-                .forEach(line ->
-                    wrapper.list2.addAll(List.of(line.split(" ")))
-                );
-        List<String> list2 = wrapper.list2;
-
-
-        System.out.println(list2);
-        System.out.println(list2.size());
-
-
-        /*Scanner scanner = new Scanner(file1);
-        scanner.useDelimiter(" ");
-
-        while (scanner.hasNext()) {
-            list.add(scanner.next());
-        }
-        System.out.println(list);*/
+        List<String> list2 = readStream(path);
 
         System.out.println("Task 1 collect strings that contains a or A: " +checkForA(list2));
         System.out.println("Task 2 count strings longer than 6: " +countWords(list2));
         System.out.println("Task 3 sort in reverse: " +reverseSort(list2));
         System.out.println("Task 4 count unique strings in list: " +uniqueStringsCounter(list2));
         System.out.println("Task 5 collect strings that starts with letter s: " +findSSTrings(list2));
+    }
+
+    /**
+     * Read file using Scanner
+     */
+    private static List<String> readScanner(String path) throws IOException {
+        File file1 = new File(path);
+        file1.createNewFile();
+
+        List<String> list = new ArrayList<>();
+        Scanner scanner = new Scanner(file1);
+        scanner.useDelimiter(" ");
+
+        while (scanner.hasNext()) {
+            list.add(scanner.next());
+        }
+        System.out.println("Reading using Scanner");
+        System.out.println(list);
+        System.out.println(list.size());
+
+        return list;
+    }
+
+    /**
+     * Read using stream
+     */
+    private static List<String> readStream(String path) throws IOException {
+        var wrapper = new Object(){List<String> list2 = new ArrayList<>();};
+        Files.lines(Paths.get(path))
+                .forEach(line ->
+                        wrapper.list2.addAll(List.of(line.split(" ")))
+                );
+        List<String> list2 = wrapper.list2;
+
+        System.out.println("Reading using Stream");
+        System.out.println(list2);
+        System.out.println(list2.size());
+        return list2;
     }
 
     /**
