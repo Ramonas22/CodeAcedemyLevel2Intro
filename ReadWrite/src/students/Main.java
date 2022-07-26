@@ -14,7 +14,7 @@ class Main {
 
         List<Student> studentList = readStudents(path);
         writeFiles(collectStudentsThatAreNotFirstCourse(studentList),"Results1","Collect students that are not first course");
-        writeFiles(collectStudentGirls(studentList),"Results2","Collect girl students");
+        writeFiles(collectStudentGirls(studentList),"Results2","Collect female students");
         writeFiles(sortStudents(studentList),"Results3","Sorted list of students by name");
 
     }
@@ -46,7 +46,7 @@ class Main {
                 .collect(Collectors.toList());
     }
     /**
-     *2 Collect student girls
+     *2 Collect student female
      */
     static List<Student> collectStudentGirls(List<Student> students){
         return students
