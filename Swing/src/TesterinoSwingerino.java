@@ -36,6 +36,7 @@ public class TesterinoSwingerino extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 btn1.setText("x");
+                btn1.setBackground(Color.GREEN);
             }
         });
         setContentPane(contentPanel);
