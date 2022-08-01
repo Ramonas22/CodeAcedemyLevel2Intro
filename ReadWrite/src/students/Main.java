@@ -16,7 +16,6 @@ class Main {
         writeFiles(collectStudentsThatAreNotFirstCourse(studentList),"Results1","Collect students that are not first course");
         writeFiles(collectStudentGirls(studentList),"Results2","Collect female students");
         writeFiles(sortStudents(studentList),"Results3","Sorted list of students by name");
-
     }
 
     /**
