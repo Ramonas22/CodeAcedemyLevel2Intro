@@ -86,7 +86,7 @@ class GUIService {
     }
 
     boolean AIPlays(GUI gui, Sides side){
-        if(!turnPlayer) {
+        if(!turnPlayer && !winCondition(gui.getBtnList())) {
             Random rand = new Random();
             String sideAI = "X";
             if (side.equals(Sides.X)) {
