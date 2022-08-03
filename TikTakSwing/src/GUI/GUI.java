@@ -123,26 +123,40 @@ public class GUI extends JFrame implements ActionListener {
         btnBBC.addActionListener(e -> {
             guiService.clearBoard(this);
             if(toggleAiCount == 0){
+                guiService.enableBoardButtons(this);
                 toggleAI = true;
                 btnBBC.setText("Toggle AI ON 0");
                 playerXLabel.setText("AI X");
                 player0Label.setText("Player 0");
+                playerXLabel.setBackground(Color.CYAN);
                 GUIService.setTurnPlayer(false);
                 guiService.AIPlays(this, GUIService.Sides.X);
                 toggleAiCount++;
                 flag = false;
             }else if(toggleAiCount == 1){
-                toggleAI = true;
                 playerXLabel.setText("Player X");
                 player0Label.setText("AI 0");
+                player0Label.setBackground(Color.CYAN);
+                playerXLabel.setBackground(Color.pink);
                 btnBBC.setText("Toggle AI OFF");
                 toggleAiCount++;
                 flag = true;
             } else if (toggleAiCount == 2) {
-                toggleAI = false;
                 player0Label.setText("Player 0");
-                btnBBC.setText("Toggle AI ON X");
+                player0Label.setBackground(Color.pink);
+                btnBBC.setText("Toggle AI VS AI");
                 toggleAiCount = 0;
+            }else {
+                toggleAI = false;
+                guiService.disableBoardButtons(this);
+                btnBBC.setText("Toggle AI ON X");
+                while (true){
+                    GUIService.setTurnPlayer(false);
+                    guiService.AIPlays(this, GUIService.Sides.X);
+                    GUIService.setTurnPlayer(false);
+                    guiService.AIPlays(this, GUIService.Sides.O);
+                }
+
             }
         });
 

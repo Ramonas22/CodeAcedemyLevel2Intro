@@ -133,4 +133,17 @@ class GUIService {
     public static void setTurnPlayer(boolean turnPlayer) {
         GUIService.turnPlayer = turnPlayer;
     }
+
+    void disableBoardButtons(GUI gui){
+        for (JButton btn:gui.getBtnList()
+             ) {
+            btn.setEnabled(false);
+        }
+    }
+    void enableBoardButtons(GUI gui){
+        for (JButton btn:gui.getBtnList()
+             ) {
+            btn.setEnabled(true);
+        }
+    }
 }
