@@ -85,7 +85,7 @@ class GUIService {
          return false;
     }
 
-    boolean AIPlays(GUI gui, Sides side){
+    void AIPlays(GUI gui, Sides side){
         if(!turnPlayer && !winCondition(gui.getBtnList())) {
             Random rand = new Random();
             String sideAI = "X";
@@ -101,11 +101,10 @@ class GUIService {
                     gui.getBtnList().get(temp).setText(sideAI);
                     turnPlayer = true;
                     turnCounter++;
-                    return true;
+                    return;
                 }
             } while (true);
         }
-        return false;
     }
 
     void updateScore(GUI gui){

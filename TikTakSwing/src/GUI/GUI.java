@@ -147,10 +147,11 @@ public class GUI extends JFrame implements ActionListener {
                 btnBBC.setText("Toggle AI VS AI");
                 toggleAiCount = 0;
             }else {
+                //HERE
                 toggleAI = false;
                 guiService.disableBoardButtons(this);
                 btnBBC.setText("Toggle AI ON X");
-                while (true){
+                for (int i = 0; i <4; i++) {
                     GUIService.setTurnPlayer(false);
                     guiService.AIPlays(this, GUIService.Sides.X);
                     GUIService.setTurnPlayer(false);
