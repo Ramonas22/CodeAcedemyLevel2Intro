@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Budget/Budget.iml" filepath="$PROJECT_DIR$/Budget/Budget.iml" />
       <module fileurl="file://$PROJECT_DIR$/Generics/Generics.iml" filepath="$PROJECT_DIR$/Generics/Generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/Level2Intro.iml" filepath="$PROJECT_DIR$/Level2Intro.iml" />
       <module fileurl="file://$PROJECT_DIR$/MoreExceptions/MoreExceptions.iml" filepath="$PROJECT_DIR$/MoreExceptions/MoreExceptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReadWrite/ReadWrite.iml" filepath="$PROJECT_DIR$/ReadWrite/ReadWrite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Revision/Revision.iml" filepath="$PROJECT_DIR$/Revision/Revision.iml" />
       <module fileurl="file://$PROJECT_DIR$/Stream/Stream.iml" filepath="$PROJECT_DIR$/Stream/Stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Swing/Swing.iml" filepath="$PROJECT_DIR$/Swing/Swing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TikTakSwing/TikTakSwing.iml" filepath="$PROJECT_DIR$/TikTakSwing/TikTakSwing.iml" />
     </modules>
   </component>
 </project>
