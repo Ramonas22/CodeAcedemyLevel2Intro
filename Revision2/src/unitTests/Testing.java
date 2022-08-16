@@ -102,7 +102,7 @@ class Testing {
             InsufficientProduct insufficientProduct = Assertions.assertThrows(InsufficientProduct.class, () ->{
                 Order.makeOrder(shop, Order.Type.Sale ,productHash);
             });
-            assertEquals(45, insufficientProduct.getRemainder());
+            assertEquals(40, insufficientProduct.getRemainder());
         }
 
     }
