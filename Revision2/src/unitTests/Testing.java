@@ -1,6 +1,7 @@
 package unitTests;
 
 import exceptions.InsufficientProduct;
+import model.Department;
 import model.Order;
 import model.Product;
 import model.Shop;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.*;
 
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -66,7 +68,7 @@ class Testing {
         @org.junit.jupiter.api.Order(1)
        @Test
         void shopBalance() {
-            assertEquals( 226.55,shop.shopBalance());
+            assertEquals( BigDecimal.valueOf(226.55),shop.shopBalance());
         }
 
         @org.junit.jupiter.api.Order(2)
@@ -98,12 +100,39 @@ class Testing {
 
         @org.junit.jupiter.api.Order(5)
         @Test
-        void makeOrderException() throws InsufficientProduct{
-            InsufficientProduct insufficientProduct = Assertions.assertThrows(InsufficientProduct.class, () ->{
-                Order.makeOrder(shop, Order.Type.Sale ,productHash);
-            });
+        void makeOrderException() {
+            InsufficientProduct insufficientProduct = Assertions.assertThrows(InsufficientProduct.class, () ->
+                    Order.makeOrder(shop, Order.Type.Sale ,productHash));
             assertEquals(40, insufficientProduct.getRemainder());
         }
+    //End of Nested Loop 1
+    }
 
+    @Nested
+    class TestingDepartment {
+        static Department department;
+        static List<Product> products = new ArrayList<>();
+        static Shop shop;
+
+        @BeforeAll
+        static void setup() throws IOException {
+            products = Shop.importProducts("C:\\Users\\sanom\\Desktop\\Coding Academy\\Level2\\Level2Intro\\Revision2\\products1.txt");
+            shop = new Shop("MAXIMA","Jonavos kazkiek ten kur visapara dirba", products);
+            department = new Department("Maxima", Arrays.asList(
+                    new Shop("LIDL", "Cia ta kur pramones g.", products),
+                    new Shop("RIMI", "Situ pilna visur Kaune..", products),
+                    new Shop("IKI", "Cia izymioji Vilniuje plytineje", products)
+            ));
+        }
+        @Test
+        void testDepartmentsBalance() {
+            assertEquals(BigDecimal.valueOf( 679.65), department.departmentBalance());
+        }
+
+        @Test
+        void testDepartmentWithDiscount(){
+            shop.setDiscountPercentage(10.0);
+            assertEquals(BigDecimal.valueOf(203.895), shop.shopBalance());
+        }
     }
 }

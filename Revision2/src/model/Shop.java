@@ -15,6 +15,8 @@ public class Shop {
     private String address;
     private List<Product> orderedProducts;
 
+    private Double discountPercentage = null;
+
     public Shop(String name, String address) {
         this.name = name;
         this.address = address;
@@ -37,7 +39,7 @@ public class Shop {
         while (scanner.hasNext()) {
             temp = scanner.nextLine();
             temp1 = temp.split(",");
-            list.add(new Product(temp1[0].trim(), Double.parseDouble(temp1[1].trim()), temp1[2].trim(), Integer.parseInt(temp1[3].trim())));
+            list.add(new Product(temp1[0].trim(), new BigDecimal(temp1[1].trim()), temp1[2].trim(), Integer.parseInt(temp1[3].trim())));
         }
         return list;
     }
@@ -48,14 +50,16 @@ public class Shop {
                 .collect(Collectors.toList());
     }
 
-    public double shopBalance() {
-        double sum = 0;
+    public BigDecimal shopBalance() {
+        BigDecimal balance = BigDecimal.ZERO;
         for (Product product : orderedProducts
         ) {
-            sum += product.getPrice() * product.getRemainder();
+            balance = balance.add( product.getPrice().multiply( BigDecimal.valueOf(product.getRemainder())));
         }
-
-        return new BigDecimal(sum).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        if(getDiscountPercentage()!=null){
+            balance = balance.multiply(BigDecimal.valueOf(1-getDiscountPercentage()/100));
+        }
+        return balance;
     }
 
     public String getName() {
@@ -80,5 +84,13 @@ public class Shop {
 
     public void setOrderedProducts(List<Product> orderedProducts) {
         this.orderedProducts = orderedProducts;
+    }
+
+    public Double getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public void setDiscountPercentage(Double discountPercentage) {
+        this.discountPercentage = discountPercentage;
     }
 }

@@ -52,25 +52,6 @@ public class Order {
                 }
             }
         }
-            /*products.forEach((barcode, amount) ->
-                    shop.getOrderedProducts()
-                            .forEach(product -> {
-                                if (product.getBarcode().equals(barcode)) {
-                                    product.setRemainder(product.getRemainder() + amount);
-                                }
-                            }));
-        } else {
-            products.forEach((barcode, amount) ->
-                    shop.getOrderedProducts()
-                            .forEach(product -> {
-                                if (product.getBarcode().equals(barcode)) {
-                                    if (product.getRemainder() >= amount) {
-                                        product.setRemainder(product.getRemainder() - amount);
-                                    } else {
-                                        throw new InsufficientProduct(product.getName(), (amount - product.getRemainder()));
-                                    }
-                                }
-                            }));*/
     }
 
     public String getOrderNr() {
