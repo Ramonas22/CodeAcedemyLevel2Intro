@@ -56,8 +56,7 @@ public class Budget {
                 };
             } catch (Exception e) {
                 System.out.println("Entered wrong command, try again");
-                temp = scanner.nextInt();
-                scanner.nextLine();
+                temp = 0;
             }
         }while (temp!=9);
     }
